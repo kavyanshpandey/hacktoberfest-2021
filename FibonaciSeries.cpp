@@ -16,6 +16,6 @@ int main(){
     cin>>num;    
     cout<<"Fibonacci Series: ";    
     cout<<"0 "<<"1 ";  
-    printFibonacci(num-2);  //n-2 because 2 numbers are already printed    
+    printFibonacci(num-2);     
      return 0;  
 }  
