@@ -1,3 +1,4 @@
 Ayush Mehrotra
 Welcome to Hacktoberfest 2021
-Thats Amazing journey.
+Thats Amazing journey for all developers.
+
