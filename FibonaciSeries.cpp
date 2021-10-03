@@ -1,24 +1,14 @@
 #include<iostream>
+#include<cmath>
 
-using namespace std;
-
-int main()
-{
-    int n, a = 0, b = 1, c;
-    cout<<"Enter the no. of Fibonacci term : ";
-    cin>>n;
-    
-    cout<<a<<" "<<b<<" ";
-    for (int i = 1; i < n; i++)
-    {
-        c = a + b;
-        cout<<c<<" ";
-        a = b;
-        b = c;
-    }
-    cout<<endl;
-    return 0;
-    //Thats cool//
-    //Happy Hacktoberfest//
+int fib(int n) {
+    double phi = (1 + sqrt(5)) / 2;
+    return round(pow(phi, n) / sqrt(5));
 }
 
+int main ()
+{
+    int n = 9;
+    std::cout << fib(n) << std::endl;
+    return 0;
+}
