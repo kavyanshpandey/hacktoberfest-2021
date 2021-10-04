@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated_heart_beat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .main_div {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(216, 189, 189);
+            display: flex;
+        }
+
+        .center_div {
+            margin: auto;
+            width: 10rem;
+            height: 10rem;
+            background-color: rgb(255, 0, 0);
+            box-shadow: .5rem .5rem 2rem;
+            position: relative;
+            transform: rotate(45deg);
+            animation: heartbeat 1s linear infinite;
+        }
+
+        .center_div::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .center_div::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            20% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            40% {
+                transform: rotate(45deg) scale(1.4);
+            }
+
+            60% {
+                transform: rotate(45deg) scale(1.2);
+            }
+
+            80% {
+                transform: rotate(45deg) scale(1.4);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="center_div"> </div>
+    </div>
+</body>
+
+</html>
