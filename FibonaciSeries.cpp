@@ -1,24 +1,21 @@
-#include<iostream>
-
-using namespace std;
-
-int main()
-{
-    int n, a = 0, b = 1, c;
-    cout<<"Enter the no. of Fibonacci term : ";
-    cin>>n;
-    
-    cout<<a<<" "<<b<<" ";
-    for (int i = 1; i < n; i++)
-    {
-        c = a + b;
-        cout<<c<<" ";
-        a = b;
-        b = c;
-    }
-    cout<<endl;
-    return 0;
-    //Thats cool//
-    //Happy Hacktoberfest//
-}
-
+#include<iostream>    
+using namespace std;      
+void printFibonacci(int num){    
+    static int num1=0, num2=1, num3;    
+    if(num>0){    
+         num3 = num1 + num2;    
+         num1 = num2;    
+         num2 = num3;    
+ cout<<num3<<" ";    
+         printFibonacci(num-1);    
+    }    
+}    
+int main(){    
+    int num;    
+    cout<<"Enter the number of elements: ";    
+    cin>>num;    
+    cout<<"Fibonacci Series: ";    
+    cout<<"0 "<<"1 ";  
+    printFibonacci(num-2);     
+     return 0;  
+}  
