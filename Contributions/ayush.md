@@ -1,1 +1,2 @@
-Hello This is Ayush, 3rd year CSE From Bangalore.
+Hi there, I am Ayush.
+Thanks Hacktoberfest for ogranising a such amezing event.
