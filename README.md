@@ -4,7 +4,7 @@ This repo will consist merge from the all participants of hacktoberfest powered 
 
 # Steps for entries:
 
-1. craete a .md file inside **Contributors folder** as given yourname.md and raised pull request.
+1. create a .md file inside **Contributors folder** as given yourname.md and raised pull request.
 2. yourname.md may contain any messages like a message or a greetings or your thoughts about Hactoberfest.<br><br>
 
 
