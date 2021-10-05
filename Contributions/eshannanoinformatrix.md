@@ -1,0 +1,1 @@
+HacktoberFest ---> Hacktoberfest is a month long celebration of open source software. It happens every year in October. During this event everyone can support open-source by contributing changes, and then earn a limited edition swag.
