@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+int MOD=1e9+7;
 
 //Binary exponentiation (Power in log N)
 int binaryexpo(int a,int b){
