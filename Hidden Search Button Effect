@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Search Button Effect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+        integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(268, 59%, 53%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        .searchBox {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchText {
+            width: 0rem;
+            border-radius: 5rem;
+            border: none;
+            outline: none;
+            transition: all 0.2s linear;
+        }
+
+        .searchBtn {
+            width: 4.5rem;
+            height: 4.5rem;
+            position: absolute;
+            background-color: rgb(33, 33, 235);
+            color: #fff;
+            font-size: 2.5rem;
+            display: grid;
+            place-items: center;
+            right: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 1rem 1.2rem -1rem #222a2f;
+        }
+
+        .searchBox:hover>.searchText {
+            width: 25rem;
+            padding: 2rem;
+            box-shadow: 0 1rem 1.2rem -1rem #222a2f;
+        }
+
+        .searchBox:hover>.searchBtn {
+            background-color: #fff;
+            color: rgb(33, 33, 235);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchBox">
+        <input type="text" class="searchText" placeholder="Type to Search...">
+        <a href="www.google.com" alt="Search google" class="searchBtn"> <i class="fas fa-search"></i> </a>
+    </div>
+</body>
+
+</html>
