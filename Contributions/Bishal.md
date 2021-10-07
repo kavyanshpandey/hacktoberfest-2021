@@ -1,0 +1,1 @@
+# I'm Bishal Pandit. Currently, I'm pursuing my Bachelor's in Computer Science and Engineering. I love problem-solving and developing innovative web projects.
