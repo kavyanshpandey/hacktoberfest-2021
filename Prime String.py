@@ -1,33 +1,28 @@
 ''' Read input from STDIN. Print your output to STDOUT '''
     #Use input() to read input from STDIN and use print to write your output to STDOUT
 
+def isPrime(s):
+    l = len(s)
+    n = 0
+    for i in range(l):
+        n += ord(s[i])
+    if n<= 1:
+        return False
+    if n <= 3:
+        return True
+    if n%2 == 0 or n%3 == 0:
+        return False
+    while(i * i <= n):
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
 def main():
     T = int(input())
-    for i in range(T):
-        k = input()
-        Esum = 0
-        Osum = 0
-        AD = 0
-        counter = 0
-        for j in k:
-            print(ord(j))
-            if counter%2 == 0 :
-                Esum += ord(j)
-            else:
-                Osum += ord(j)  
-
-            counter +=1
-
-        if ((Esum - Osum) < 0 ):
-            AD = Osum - Esum
-        else:
-            AD = Esum - Osum
-
-        if ( AD%3 == 0 or AD%5 == 0 or AD%7 == 0 ):
-            print("Prime String")
-
-        else:
-            print("Casual String")
-
+    if isPrime(T):
+        print("Prime string")
+    else:
+        print("Casual string")
 main()
 
