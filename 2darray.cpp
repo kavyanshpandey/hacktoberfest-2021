@@ -13,7 +13,7 @@ int main(){
         for(int j=0;j<m;j++){      //1st
             cout<<arr[i][j]<<" ";
         }
-        cout<<endl;
+        cout<<"\n";
     }
      for(int i=0; i<n; i++)
     {
