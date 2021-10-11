@@ -1,21 +1,21 @@
 #include<iostream>    
 using namespace std;      
-void printFibonacci(int num){    
-    static int num1=0, num2=1, num3;    
-    if(num>0){    
-         num3 = num1 + num2;    
-         num1 = num2;    
-         num2 = num3;    
- cout<<num3<<" ";    
-         printFibonacci(num-1);    
+void printFibonacci(int n){    
+    static int n1=0, n2=1, n3;    
+    if(n>0){    
+         n3 = n1 + n2;    
+         n1 = n2;    
+         n2 = n3;    
+ cout<<n3<<" ";    
+         printFibonacci(n-1);    
     }    
 }    
 int main(){    
-    int num;    
+    int n;    
     cout<<"Enter the number of elements: ";    
-    cin>>num;    
+    cin>>n;    
     cout<<"Fibonacci Series: ";    
     cout<<"0 "<<"1 ";  
-    printFibonacci(num-2);     
+    printFibonacci(n-2);     
      return 0;  
 }  
