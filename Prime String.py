@@ -24,10 +24,10 @@ def main():
             AD = Esum - Osum
 
         if ( AD%3 == 0 or AD%5 == 0 or AD%7 == 0 ):
-            print("Prime String")
+            print("This is a Prime String")
 
         else:
-            print("Casual String")
+            print("This is a Normal String")
 
 main()
 
