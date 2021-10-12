@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautifull_Thunder_Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .main_div {
+            width: 100vw;
+            height: 100vh;
+            background-color: #222f3e;
+            display: grid;
+            place-items: center;
+        }
+
+        .center_div {
+            width: 50vw;
+            height: auto;
+            background-size: 8rem;
+        }
+
+        .center_div ul {
+            display: flex;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .center_div ul li {
+            list-style: none;
+            text-transform: uppercase;
+            font-size: 7rem;
+            padding-left: 2rem;
+            color: rgb(119, 113, 113);
+            animation: light 1.2s linear infinite;
+        }
+
+        .center_div ul li:first-child {
+            padding-left: 0%;
+        }
+
+        .center_div ul li:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .center_div ul li:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .center_div ul li:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .center_div ul li:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .center_div ul li:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .center_div ul li:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        .center_div ul li:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes light {
+            0% {
+                color: #576574;
+                text-shadow: none;
+            }
+
+            90% {
+                color: #746857;
+                text-shadow: none;
+            }
+
+            100% {
+                color: #fffb00;
+                text-shadow: 0 0 1rem #d35400, 0 0 7rem #d35400;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="center_div">
+            <ul>
+                <li>t</li>
+                <li>h</li>
+                <li>u</li>
+                <li>n</li>
+                <li>d</li>
+                <li>e</li>
+                <li>r</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
