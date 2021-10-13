@@ -1,27 +1,30 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    int n,m;
-    cin>>n>>m;
-    int arr[n][m];
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin>>arr[i][j];
-        }
-    }
-     for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){      //1st
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-     for(int i=0; i<n; i++)
-    {
-        for(int j=m-1; j>=0; j--){
-        cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    return 0;
-
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+//clear the screen.
+clrscr();
+//declare variable type int
+int a[3][3],i,j;
+//Input the numbers
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+cout<<"Enter number :";
+cin>>a[i][j];
 }
+}
+//display the matrix
+for(i=2;i>=0;i--)
+{
+for(j=2;j>=0;j--)
+{
+cout<<a[i][j]<<"\t";
+}
+cout<<endl;
+}
+//get character
+getch();
+}
+
