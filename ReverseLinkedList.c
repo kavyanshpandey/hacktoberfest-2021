@@ -1,55 +1,68 @@
+// Iterative C program to reverse a linked list
+#include <stdio.h>
+#include <stdlib.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-struct node{
-    int data;
-    struct node * next;
+/* Link list node */
+struct Node {
+	int data;
+	struct Node* next;
 };
-void  Listtraversal(struct node *ptr)
+
+/* Function to reverse the linked list */
+static void reverse(struct Node** head_ref)
 {
-    while(ptr!=NULL)
-    {
-     printf("%d  ",ptr->data);
-         ptr=ptr->next;
-    }
-       
-}
- 
- void function1(struct node* head)
-{
-  if(head == NULL)
-    return;
-  
-  function1(head->next); 
-  printf("%d  ", head->data);
+	struct Node* prev = NULL;
+	struct Node* current = *head_ref;
+	struct Node* next = NULL;
+	while (current != NULL) {
+		// Store next
+		next = current->next;
+
+		// Reverse current node's pointer
+		current->next = prev;
+
+		// Move pointers one position ahead.
+		prev = current;
+		current = next;
+	}
+	*head_ref = prev;
 }
 
+/* Function to push a node */
+void push(struct Node** head_ref, int new_data)
+{
+	struct Node* new_node
+		= (struct Node*)malloc(sizeof(struct Node));
+	new_node->data = new_data;
+	new_node->next = (*head_ref);
+	(*head_ref) = new_node;
+}
+
+/* Function to print linked list */
+void printList(struct Node* head)
+{
+	struct Node* temp = head;
+	while (temp != NULL) {
+		printf("%d ", temp->data);
+		temp = temp->next;
+	}
+}
+
+/* Driver code*/
 int main()
 {
-struct node *head;
-struct node *second;
-struct node *third;
-struct node *fourth;
-struct node *fifth;
+	/* Start with the empty list */
+	struct Node* head = NULL;
 
-head= (struct node *)malloc(sizeof(struct node*));
-second=(struct node*)malloc(sizeof(struct node*));
-third=(struct node*)malloc(sizeof(struct node *));
-fourth=(struct node *)malloc(sizeof(struct node *));
-fifth=(struct node*)malloc(sizeof(struct node));
-head->data=7; 
-head->next=second;
- second->data=3;
-second->next=third;
-third->data=8;
-third->next=fourth;
-fourth->data=9;
-fourth->next=fifth; 
-fifth->data=1;
-fifth->next=NULL;
-Listtraversal(head);
+	push(&head, 20);
+	push(&head, 4);
+	push(&head, 15);
+	push(&head, 85);
 
-printf(" \nthe reverse Linked List is - \n");
-function1(head); 
-
+	printf("Given linked list\n");
+	printList(head);
+	reverse(&head);
+	printf("\nReversed Linked list \n");
+	printList(head);
+	getchar();
 }
