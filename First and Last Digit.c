@@ -1,10 +1,8 @@
 #include <stdio.h>
 int main(void) 
 {
-	int N,T,i,LastNum,FirstNum;
-	scanf("%d",&T);
-	for(i=0;i<T;i++)
-	   {
+	int N,i,LastNum,FirstNum;
+
 	       scanf("%d",&N);
 	       LastNum = N%10;
 	       while(N!=0)
@@ -15,8 +13,8 @@ int main(void)
 	           }
                N=N/10;
 	        }    
-	       printf("%d\n",FirstNum+LastNum);
-	   }
+	       printf("First digit:%d\nLast digit:%d",FirstNum,LastNum);
+
 	return 0;
 }
 
