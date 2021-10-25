@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scramble Game</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Qahiri&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+<style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    header{
+        width: 100%;
+        line-height: 15vh;
+        background-color: #20bf6b;
+    }
+    h1{
+        text-align: center;
+        color: aliceblue;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 15px;
+        text-shadow: 0 1px 0 #efefef,
+                     0 2px 0 #efefef,
+                     0 3px 0 #efefef,
+                     0 4px 0 #efefef,
+                     0 30px 5px rgba(0, 0, 0, 1);
+
+    }
+    section{
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7bed9f;
+    }
+    .gameArea{
+        width: 50%;
+        height: 400px;
+        padding: 20px 0;
+        background-color: #2ed573;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Slabo 27px', serif;
+        box-shadow: 0 8px 6px -6px black;
+        
+    }
+    h3{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    input{
+        width: 40%;
+        padding: 15px 0;
+        text-align: center;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        background-color: #dff9fb;
+        color: black;
+        margin: 2rem 0;
+        font-size: 1.1rem;
+    }
+    button{
+        font-size: 1rem;
+        cursor: pointer;
+        outline: none;
+        border: #2f3542;
+        margin-top: 10px;
+        color: #20bf6b;
+
+    }
+    button.btn{
+        font-weight: 600;
+        padding: 1rem 2rem;
+        background: white;
+        text-transform: uppercase;
+        transition-property: all;
+        transition-duration: 0.5s;
+        border-radius: 15px;
+        transition-timing-function: cubic-bezier(0.65, -0.25, 0.25, 1.95);
+    }
+    button.btn:hover, button.btn:focus, button.btn:active{
+        letter-spacing: 0.125rem;
+        word-spacing: 0.2rem;
+    }
+    .hidden{
+        display: none;
+    }
+</style>
+<body>
+    <header>
+        <h1>Guess the word</h1>
+    </header>
+    <section>
+        <div class="gameArea">
+            <h3 class="message"></h3>
+            <input type="text" class="hidden">
+            <button class="btn">Click here to start</button>
+        </div>
+    </section>
+    <script>
+        const msg=document.querySelector('.message');
+        const guess=document.querySelector('input');
+        const btn=document.querySelector('.btn');
+        let play=false;
+        let newWords="";
+        let ranWords="";
+        let swords=['python','javascript','c++','php','java','c#','html','css','reactjs','angular','swift','android','sql','nodejs','blockchain','machine','learning','kotlin','ios','microsoft'];
+        const createNewWords=() => {
+            let randNum=Math.floor(Math.random() *swords.length);
+            let newTempsWords=swords[randNum];
+            return newTempsWords;
+        }
+        const scrambleWords =(arr)=>{
+            for(let i=arr.length-1;i>=0;i--){
+                let temp=arr[i];
+                let j=Math.floor(Math.random()*(i+1));
+                arr[i]=arr[j]
+                arr[j]=temp;
+            }
+            return arr;
+        }
+        btn.addEventListener('click',function(){
+            if(!play){
+                play=true;
+                btn.innerHTML="GUESS";
+                guess.classList.toggle('hidden');
+                newWords=createNewWords();
+                ranWords=scrambleWords(newWords.split("")).join("");
+                msg.innerHTML=ranWords;
+            }
+            else{
+                let tempWord=guess.value;
+                if(tempWord===newWords)
+                {
+                    play=false;
+                    msg.innerHTML='Awesome! It is Correct. ';
+                    btn.innerHTML='Start Again';
+                    guess.classList.toggle('hidden');
+                    guess.value="";
+                }
+                else{
+                    msg.innerHTML='Incorrect! Try Again.';
+                    
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
