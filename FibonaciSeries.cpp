@@ -1,4 +1,5 @@
-#include<iostream>    
+#include<iostream> 
+#include<bits/stdc++.h>
 using namespace std;      
 void printFibonacci(int num){    
     static int num1=0, num2=1, num3;    

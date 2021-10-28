@@ -10,4 +10,5 @@ int main() {
     cout << "Result of binary search  = " << ind_binary << endl;
     cout << "Result of linear search  = " << ind_linear << endl;
     return 0;
+    
 }

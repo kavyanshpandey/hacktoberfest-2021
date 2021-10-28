@@ -44,3 +44,5 @@ int search(int a[],int n,int e)
     
     return -1;
 }
+
+//Time Complexity O(log n)
