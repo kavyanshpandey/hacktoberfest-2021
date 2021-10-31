@@ -1,0 +1,24 @@
+#include<stdio.h>    
+#include<stdlib.h>  
+int main(){  
+int i,j,k,n,c;    
+printf("enter the limit:\n");    
+scanf("%d",&n);    
+for(i=1;i<=n;i++)    
+{    
+for(j=1;j<=n-i;j++)    
+{    
+printf(" ");    
+}    
+for(k=1;k<=i;k++)    
+{    
+printf("%d",k);    
+}    
+for(c=i-1;c>=1;c--)    
+{    
+printf("%d",c);    
+}    
+printf("\n");    
+}    
+return 0;  
+} 
