@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's_Cradle_Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        :root {
+            --main-bg: hsl(204, 64%, 94%);
+            --center-bg: #2980b9;
+            --bg: rgba(71, 81, 82, 0.7);
+            --center-boxshadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25),
+                0 1rem 1rem rgba(0, 0, 0, 0.22);
+            --ballshadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25),
+                0 1rem 1rem rgba(0, 0, 0, 0.22);
+        }
+
+        .main_div {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--main-bg);
+            display: grid;
+            place-items: center;
+        }
+
+        .center_div {
+            width: 60%;
+            height: 60%;
+            border: 0.5rem solid var(--center-bg);
+            border-bottom-width: 5rem;
+            box-shadow: var(--center-boxshadow);
+            background-color: linear-gradient(rgba(255, 255, 255, ));
+            display: flex;
+            justify-content: center;
+        }
+
+        .center_div span {
+            width: 0.5rem;
+            height: 70%;
+            background-color: var(--bg);
+            display: blocks;
+            margin: 0 2.77rem;
+            position: relative;
+            transform-origin: top;
+        }
+
+        .center_div span::before {
+            content: '';
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: rgb(37, 44, 36);
+            position: absolute;
+            bottom: 0%;
+            transform: translateX(-50%);
+            box-shadow: var(--ballshadow);
+        }
+
+        .center_div span:first-child {
+            animation: leftball 2s linear infinite;
+        }
+
+        .center_div span:last-child {
+            animation: rightball 2s linear 1s infinite;
+        }
+
+        @keyframes leftball {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                transform: rotate(50deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rightball {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                transform: rotate(-50deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="center_div">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>
