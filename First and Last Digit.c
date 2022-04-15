@@ -1,9 +1,8 @@
 #include <stdio.h>
-int main(void) 
-{
+int main() {
 	int N,T,i,LastNum,FirstNum;
 	scanf("%d",&T);
-	for(i=0;i<T;i++)
+	while(T--)
 	   {
 	       scanf("%d",&N);
 	       LastNum = N%10;
